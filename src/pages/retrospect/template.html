@@ -7,7 +7,7 @@
         </div>
         <div>
             <div class="step-list">
-                <div class="step-item" v-for="item in list">
+                <div class="step-item" v-for="item in list" @click="jumpPage(item)">
                     <div class="triangle"></div>
                     <div class="sort">{{ item.sort }}</div>
                     <div class="icon">
