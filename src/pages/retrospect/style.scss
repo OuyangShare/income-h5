@@ -1,3 +1,104 @@
 .retrospect-page {
-    
+    .title {
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        background-color: rgb(250, 250, 250);
+        border-bottom: 1px solid rgb(200, 200, 200)
+    }
+
+    .retrospect-container {
+        padding: 4vw;
+
+        .commodity-name {
+            margin-bottom: 15px;
+            line-height: 25px;
+        }
+
+        .step-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border-bottom: 1px solid rgb(200, 200, 200);
+
+            .step-item {
+                width: 25vw;
+                height: 25vw;
+                text-align: center;
+                position: relative;
+                border: 1px solid #bbbbbb;
+                margin: 0 0 7.5vw;
+                border-radius: 10px;
+                box-sizing: border-box;
+
+                .triangle {
+                    width: 0;
+                    height: 0;
+                    border-top: 0px solid transparent;
+                    border-bottom: 35px solid transparent;
+                    border-left: 33px solid red;
+                    position: absolute;
+                    top: -1px;
+                    left: -1px;
+                }
+
+                .sort {
+                    position: absolute;
+                    font-size: 12px;
+                    width: 20px;
+                    height: 20px;
+                    line-height: 20px;
+                    top: -1px;
+                    left: -1px;
+                    color: #ffffff;
+                    font-weight: 500;
+                }
+
+                .icon {
+                    line-height: 20vw;
+                    font-size: 25px;
+                }
+
+                .name {
+                    position: absolute;
+                    bottom: 5px;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+
+        .shop-info {
+            font-size: 12px;
+            padding: 8px 0;
+            font-weight: 600;
+            color: #000000;
+            border-bottom: 1px solid rgb(200, 200, 200);
+        }
+
+        .contact-info {
+            border-bottom: 1px solid rgb(200, 200, 200);
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .left {
+                margin-right: 30px;
+            }
+
+            .we {
+
+            }
+
+            .num {
+                color: #a3a0a3;
+                font-size: 13px
+            }
+
+            #qrcode {
+                width: 70px;
+                height: 70px
+            }
+        }
+    }
 }
