@@ -1,3 +1,18 @@
-<div class="">
-    嘤嘤嘤
+<div class="clearance-page">
+    <van-nav-bar style="border-bottom: 1px solid rgb(200,200,200); margin-bottom: 5px;" title="报关通关">
+        <template #left>
+            <span style="font-size: 16px;" @click="back()">
+                <van-icon color="black" name="arrow-left" size="16" />返回
+            </span>
+        </template>
+    </van-nav-bar>
+    <div class="content-wrapper">
+        <div class="content-line">
+            <div class="tag">报关单编号</div>
+            <div class="name"></div>
+        </div>
+        <div class="imgDiv t-center">
+            <p id="noImg" style="margin: 20px 0px; color: rgb(102, 102, 102);">该产品无相关证书单据或相关单据出具中！</p>
+        </div>
+    </div>
 </div>

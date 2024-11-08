@@ -1,0 +1,43 @@
+.overseas-page {
+    
+    .content-wrapper {
+        box-sizing: border-box;
+        padding: 1rem 1rem 2rem 1rem;
+        margin: 1rem;
+        box-shadow: 0 -1px 10px #cdcdcd;
+        position: relative;
+        border-radius: 7px;
+        background: #ffffff;
+
+        &::after {
+            content: '';
+            right: 14px;
+            bottom: 0;
+            width: 112px;
+            height: 48px;
+            background: url(http://trace.cndwine.com/common/mobileImg/imgTest/rec_logo.png) center no-repeat;
+            opacity: 0.5;
+            background-size: contain;
+            position: absolute
+        }
+
+        .content {
+            .content-line {
+                padding-bottom: 20px;
+                display: flex;
+
+                .tag {
+                    color: #333333;
+                    width: 90px;
+                    min-width: 90px;
+                    font-size: 15px;
+                }
+
+                .name {
+                    color: #999999;
+                    word-wrap: break-word;
+                }
+            }
+        }
+    }
+}

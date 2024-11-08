@@ -31,6 +31,24 @@
                 border-radius: 10px;
                 box-sizing: border-box;
 
+                .right-arrow {
+                    color: #eb3b45;
+                    position: absolute;
+                    line-height: 25vw;
+                    width: 8.5vw;
+                    text-align: center;
+                    left: 25vw;
+                    top: 0;
+                }
+
+                .down-arrow {
+                    position: absolute;
+                    line-height: 7.5vw;
+                    width: 25vw;
+                    top: 25vw;
+                    color: #eb3b45;
+                }
+
                 .triangle {
                     width: 0;
                     height: 0;
@@ -82,13 +100,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
             .left {
                 margin-right: 30px;
             }
 
-            .we {
-
-            }
+            .we {}
 
             .num {
                 color: #a3a0a3;

@@ -1,3 +1,57 @@
-<div class="">
-    嘤嘤嘤
+<!-- 商品详情 -->
+<div class="commodity-page">
+    <van-nav-bar style="border-bottom: 1px solid rgb(200,200,200); margin-bottom: 5px;" title="商品详情">
+        <template #left>
+            <span style="font-size: 16px;" @click="back()">
+                <van-icon color="black" name="arrow-left" size="16" />返回
+            </span>
+        </template>
+    </van-nav-bar>
+    <div class="swipe-info">
+        <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+            <van-swipe-item v-for="(item, index) in swipeList" :key="index">
+                <van-image width="100%" lazy-load :src="item" />
+            </van-swipe-item>
+        </van-swipe>
+    </div>
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="content-line">
+                <div class="tag">商品名称</div>
+                <div class="name">{{obj.name}}</div>
+            </div>
+            <div class="content-line">
+                <div class="tag">储藏方法</div>
+                <div class="name">{{obj.storagemethod}}</div>
+            </div>
+            <div class="content-line">
+                <div class="tag">品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;牌</div>
+                <div class="name">{{ obj.brand }}</div>
+            </div>
+            <div class="content-line">
+                <div class="tag">规&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格</div>
+                <div class="name">{{ obj.spec }}</div>
+            </div>
+            <div class="content-line">
+                <div class="tag">葡萄种类</div>
+                <div class="name">{{ obj.grapetype }}</div>
+            </div>
+            <div class="content-line">
+                <div class="tag">葡萄酒等级</div>
+                <div class="name">{{ obj.grapelevel }}</div>
+            </div>
+            <div class="content-line">
+                <div class="tag">搭配菜肴</div>
+                <div class="name">{{ obj.paireddishes }}</div>
+            </div>
+            <div class="content-line">
+                <div class="tag">醒酒时间</div>
+                <div class="name">{{ obj.aerationtime }}</div>
+            </div>
+            <div class="content-line">
+                <div class="tag">香&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;味</div>
+                <div class="name">{{obj.aroma}}</div>
+            </div>
+        </div>
+    </div>
 </div>

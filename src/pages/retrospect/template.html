@@ -2,18 +2,25 @@
     <div class="title">追溯详情</div>
     <div class="retrospect-container">
         <div class="commodity-name">
-            <div>商品名称 商品名称</div>
-            <div>建议零售价 999.98元</div>
+            <div>商品名称 {{ infoObj.name }}</div>
+            <div>建议零售价 {{ infoObj.price }}元</div>
         </div>
         <div>
             <div class="step-list">
                 <div class="step-item" v-for="item in list" @click="jumpPage(item)">
                     <div class="triangle"></div>
                     <div class="sort">{{ item.sort }}</div>
-                    <div class="icon">
-                        <i class="fas fa-home"></i>
-                    </div>
+                    <div class="icon" v-html="item.icon"></div>
                     <div class="name">{{item.name}} </div>
+                    <div v-if="[1,2,7,8].includes(Number(item.sort))" class="right-arrow">
+                        <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div v-if="[5,6].includes(Number(item.sort))" class="right-arrow">
+                        <i class="fa fa-angle-double-left"></i>
+                    </div>
+                    <div v-if="[3,6].includes(Number(item.sort))" class="down-arrow">
+                        <i class="fa fa-angle-double-down"></i>
+                    </div>
                 </div>
             </div>
         </div>
