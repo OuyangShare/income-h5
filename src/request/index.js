@@ -23,33 +23,22 @@ axios.interceptors.response.use((response) => {
     return Promise.reject(error);
 });
 
-export function request(url = '', params = {}, type = 'POST') {
+export function request(url = '', params = {}, data = {}, type = 'POST') {
     //设置 url params type 的默认值
     return new Promise((resolve, reject) => {
-        if (type.toUpperCase() === 'GET') {
+        try {
             return axios({
+                method: type,
                 url: url,
-                params
+                params,
+                data: data
             }).then(res => {
                 resolve(res)
             }).catch(err => {
                 reject(err)
             })
-        } else if (type.toUpperCase() === 'POST') {
-            try {
-                return axios({
-                    method: 'POST',
-                    url: url,
-                    data: params
-                }).then(res => {
-                    resolve(res)
-                }).catch(err => {
-                    reject(err)
-                })
-            } catch (error) {
-                reject(error)
-            }
-
+        } catch (error) {
+            reject(error)
         }
     })
 }
