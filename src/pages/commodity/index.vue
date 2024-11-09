@@ -5,6 +5,8 @@
 <script lang="js">
 import router from '@/router';
 import { ref, onMounted } from 'vue';
+import { API } from '@/common/api'
+
 export default {
   setup() {
         const swipeList = ref([
@@ -18,10 +20,11 @@ export default {
         const obj = ref({});
 
         onMounted(() => {
-           obj.value = JSON.parse(localStorage.getItem("info") || {});
-           console.log(localStorage.getItem("info"));
-           
-           swipeList.value = Array.from(obj.value?.bannerList || [], x=>x.bannerimage);
+            API.getDetaInfo({code: 'P180100922'}).then(res => {
+                const data = res?.data?.data;
+                obj.value = data;
+                swipeList.value = Array.from(obj.value?.bannerList || [], x=>x.bannerimage);
+            })
         })
         return {
             swipeList,

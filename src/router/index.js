@@ -55,7 +55,7 @@ const routes = [
     },
     {
         path: '/aboutus',
-        name: 'overseas',
+        name: 'aboutus',
         component: () => import('../pages/aboutus/index.vue'),
     },
 ];
