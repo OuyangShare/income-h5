@@ -6,16 +6,19 @@
 import router from '@/router';
 import { ref, onMounted } from 'vue';
 import { API } from '@/common/api'
+import { useRoute } from 'vue-router';
 
 export default {
     setup() {
+        const route = useRoute();
+
         const back = () => {
             router.back();
         }
         const infoObj = ref({});
         const securitydetails = ref({});
         onMounted(() => {
-            API.getDetaInfo({code: 'P180100922'}).then(res => {
+            API.getDetaInfo({code: route.query.code}).then(res => {
                 infoObj.value = res?.data?.data; 
                 securitydetails.value = infoObj.value.securitydetails[0] || {};              
             })

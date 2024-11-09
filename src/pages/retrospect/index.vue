@@ -3,11 +3,14 @@
 
 <script lang="js">
 import router from '@/router';
-import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+ import { ref, onMounted } from 'vue';
 import { API } from '@/common/api'
 
 export default {
     setup() {
+        const route = useRoute();
+
         const list = ref([
             {
                 name: '商品详情', 
@@ -67,7 +70,12 @@ export default {
 
         const jumpPage = item => {
             if(item.url) {
-                router.push(item.url)
+                router.push(
+                    {
+                        path: item.url,
+                        query: route.query
+                    }
+                )
             } else {
                 location.href = "https://www.cndwine.com"
             }
@@ -76,7 +84,7 @@ export default {
         const infoObj = ref({});
 
         onMounted(() => {
-            API.getDetaInfo({code: 'P180100922'}).then(res => {
+            API.getDetaInfo({code: route.query.code}).then(res => {
                 infoObj.value = res?.data?.data;                
             })
         })

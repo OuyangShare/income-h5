@@ -6,16 +6,18 @@
 import router from '@/router';
 import { ref, onMounted } from 'vue';
 import { API } from '@/common/api'
-
+import { useRoute } from 'vue-router';
 export default {
     setup() {
+        const route = useRoute();
+
         const back = () => {
             router.back();
         }
         const infoObj = ref({});
         const logisticsinfos = ref({});
         onMounted(() => {
-            API.getDetaInfo({code: 'P180100922'}).then(res => {
+            API.getDetaInfo({code: route.query.code}).then(res => {
                 infoObj.value = res?.data?.data; 
                 logisticsinfos.value = infoObj.value.logisticsinfos[0] || {};              
             })
