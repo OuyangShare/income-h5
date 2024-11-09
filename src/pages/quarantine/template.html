@@ -10,9 +10,12 @@
         <div class="content">
             <div class="content-line">
                 <div class="tag">卫生证书</div>
-                <div class="name"></div>
+                <div class="name">{{quarantines.pcode}}</div>
             </div>
-            <div class="imgDiv t-center">
+            <div v-if="quarantines.sanitarycerity" class="imgDiv t-center">
+                <img :src="quarantines.sanitarycerity" />
+            </div>
+            <div v-else class="imgDiv t-center">
                 <p id="noImg" style="margin: 20px 0px; color: rgb(102, 102, 102);">该产品无相关证书单据或相关单据出具中！</p>
             </div>
 

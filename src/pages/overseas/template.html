@@ -10,23 +10,24 @@
         <div class="content">
             <div class="content-line">
                 <div class="tag">商品名称</div>
-                <div id="goodsname" class="name">红蔓庄园海岸白葡萄酒</div>
+                <div id="goodsname" class="name">{{ infoObj.name }}</div>
             </div>
             <div class="content-line">
                 <div class="tag">生&nbsp;产&nbsp;商</div>
-                <div id="producername" class="name">智利圣彼得保红蔓庄园葡萄酒酿造有限公司</div>
+                <div id="producername" class="name">{{ internetProduction.producername}}</div>
             </div>
             <div class="content-line">
                 <div class="tag">原&nbsp;产&nbsp;国</div>
-                <div id="originnodename" class="name">智利</div>
+                <div id="originnodename" class="name">{{internetProduction.originnodename}}</div>
             </div>
             <div class="content-line">
                 <div class="tag">原产地证</div>
             </div>
             <div class="content-line t-center">
                 <p id="noImg" style="display:none;margin: 20px 0;color:#666">该产品无相关证书单据或相关单据出具中！</p>
-                <img id="origincertify"
-                    src="http://bj.bcebos.com/v1/cndwineapp/CNDERPDB/image/trace/origincertify/2023-12-17/WI000000000003236538170445776762592.jpg@!origin">
+                <!-- <img id="origincertify"
+                    src="http://bj.bcebos.com/v1/cndwineapp/CNDERPDB/image/trace/origincertify/2023-12-17/WI000000000003236538170445776762592.jpg@!origin"> -->
+                <img :src="internetProduction.origincertify" />
             </div>
         </div>
     </div>
