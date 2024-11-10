@@ -19,7 +19,7 @@ export default {
                 url: '/commodity'
             },
             {
-                name: '境外生产',
+                name: '检测报告',
                 icon: '<i class="fas fa-home"></i>',
                 sort: '2',
                 url: '/overseas'

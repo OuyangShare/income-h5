@@ -16,16 +16,21 @@ export default {
         }
         const infoObj = ref({});
         const internetProduction = ref({});
-
+        const producername = ref();
+        const imglist = ref([]);
         onMounted(() => {
             API.getDetaInfo({code: route.query.code}).then(res => {
                 infoObj.value = res?.data?.data;
-                internetProduction.value = infoObj.value?.internetProduction[0] || {};            
+                internetProduction.value = infoObj.value?.internetProduction || [];
+                producername.value =  internetProduction.value[0].producername;
+                imglist.value = Array.from(internetProduction.value, x=>x.origincertify);
             })
         })
         return {
             infoObj,
             internetProduction,
+            producername,
+            imglist,
             back
         }
     }

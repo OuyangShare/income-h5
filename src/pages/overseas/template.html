@@ -1,5 +1,5 @@
 <div class="overseas-page">
-    <van-nav-bar style="border-bottom: 1px solid rgb(200,200,200); margin-bottom: 5px;" title="境外生产">
+    <van-nav-bar style="border-bottom: 1px solid rgb(200,200,200); margin-bottom: 5px;" title="检测报告">
         <template #left>
             <span style="font-size: 16px;" @click="back()">
                 <van-icon color="black" name="arrow-left" size="16" />返回
@@ -13,21 +13,18 @@
                 <div id="goodsname" class="name">{{ infoObj.name }}</div>
             </div>
             <div class="content-line">
-                <div class="tag">生&nbsp;产&nbsp;商</div>
-                <div id="producername" class="name">{{ internetProduction.producername}}</div>
+                <div class="tag">供&nbsp;应&nbsp;商</div>
+                <div id="producername" class="name">{{ producername}}</div>
             </div>
             <div class="content-line">
-                <div class="tag">原&nbsp;产&nbsp;国</div>
-                <div id="originnodename" class="name">{{internetProduction.originnodename}}</div>
-            </div>
-            <div class="content-line">
-                <div class="tag">原产地证</div>
+                <div class="tag">检测证明</div>
             </div>
             <div class="content-line t-center">
-                <p id="noImg" style="display:none;margin: 20px 0;color:#666">该产品无相关证书单据或相关单据出具中！</p>
-                <!-- <img id="origincertify"
-                    src="http://bj.bcebos.com/v1/cndwineapp/CNDERPDB/image/trace/origincertify/2023-12-17/WI000000000003236538170445776762592.jpg@!origin"> -->
-                <img :src="internetProduction.origincertify" />
+                <p v-if="imglist.length === 0" id="noImg" style="margin: 20px 0;color:#666">该产品无相关证书单据或相关单据出具中！</p>
+                <img v-for="(item, index) in imglist" :src="item" :key="index"></img>
+            </div>
+            <div class="content-logo-img">
+                <van-image width="60px" height="30px" fit="contain" src="/logo.jpg" />
             </div>
         </div>
     </div>
