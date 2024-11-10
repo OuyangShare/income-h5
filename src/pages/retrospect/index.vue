@@ -80,13 +80,18 @@ export default {
                 // location.href = "https://www.cndwine.com"
             }
         };
-        const jumpCert = () => {
-            router.push(
-                {
-                    path: '/overseas',
-                    query: route.query
-                }
-            )
+
+        const show = ref(false);
+        const cerImg = ref('');
+        const jumpCert = (item) => {
+            cerImg.value = item.imageadd;
+            show.value = true;
+            // router.push(
+            //     {
+            //         path: '/overseas',
+            //         query: route.query
+            //     }
+            // )
         };
 
         const infoObj = ref({});
@@ -103,6 +108,8 @@ export default {
             jumpPage,
             infoObj,
             jumpCert,
+            show,
+            cerImg,
         }
     }
 }

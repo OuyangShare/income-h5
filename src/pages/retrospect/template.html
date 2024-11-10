@@ -33,7 +33,7 @@
         </div>
         <div class="shop-info">
             <div class="info-title">蚌埠市傲咪宠物有限公司(xmc)可追溯检测报告：</div>
-            <div v-for="(item, index) in isccproductList" :key="index" @clic="jumpCert">
+            <div v-for="(item, index) in isccproductList" :key="index" @click="jumpCert(item)">
                 {{item.caname}}
                 <a id="cqc-cert" href="javascript:void(0)">{{item.caimg}}/3502</a>
             </div>
@@ -48,4 +48,8 @@
             </div>
         </div>
     </div>
+
+    <van-popup v-model:show="show" position="center" :style="{ height: '90%' }" closeable>
+        <van-image width="100%" height="100%" fit="contain" :src="cerImg" />
+    </van-popup>
 </div>
