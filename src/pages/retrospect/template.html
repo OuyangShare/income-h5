@@ -2,8 +2,14 @@
     <div class="title">追溯详情</div>
     <div class="retrospect-container">
         <div class="commodity-name">
-            <div>商品名称 {{ infoObj.name }}</div>
-            <div>建议零售价 {{ infoObj.price }}元</div>
+            <div class="content-line">
+                <div class="tag">商品名称</div>
+                <div class="name">{{ infoObj.name }}</div>
+            </div>
+            <div class="content-line">
+                <div class="tag">建议零售价</div> 
+                <div class="name">{{ infoObj.price }}元 </div>
+            </div>
         </div>
         <div>
             <div class="step-list">

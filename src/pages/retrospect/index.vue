@@ -25,7 +25,7 @@ export default {
                 url: '/overseas'
             },
             {
-                name: '国外检测',
+                name: '使用说明',
                 icon: '<i class="fas fa-flask"></i>',
                 sort: '3',
                 url: '/detection',
@@ -37,22 +37,22 @@ export default {
                 url: '/quarantine'
             },
             {
-                name: '报关通关',
-                icon: '<i class="fas fa-id-card"></i>',
+                name: '公司简介',
+                icon: '<i class="fas fa-star"></i>',
                 sort: '5',
-                url: '/clearance'
-            },
-            {
-                name: '物流信息',
-                icon: '<i class="fas fa-anchor"></i>',
-                sort: '4',
-                url: '/logistics'
+                url: '/aboutus'
             },
             {
                 name: '流通信息',
                 icon: '<i class="fas fa-truck"></i>',
-                sort: '7',
+                sort: '4',
                 url: '/circulation'
+            },
+            {
+                name: '物流信息',
+                icon: '<i class="fas fa-anchor"></i>',
+                sort: '7',
+                url: '/logistics'
             },
             {
                 name: '防伪查询',
@@ -61,11 +61,11 @@ export default {
                 url: '/security'
             },
             {
-                name: '了解我们',
-                icon: '<i class="fas fa-star"></i>',
+                name: '报关通关',
+                icon: '<i class="fas fa-id-card"></i>',
                 sort: '9',
-                url: ''
-            }
+                url: '/clearance'
+            },
         ]);
 
         const jumpPage = item => {

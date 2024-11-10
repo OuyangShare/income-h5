@@ -8,17 +8,17 @@
         border-radius: 7px;
         background: #ffffff;
 
-        &::after {
-            content: '';
-            right: 14px;
-            bottom: 0;
-            width: 112px;
-            height: 48px;
-            background: url(http://trace.cndwine.com/common/mobileImg/imgTest/rec_logo.png) center no-repeat;
-            opacity: 0.5;
-            background-size: contain;
-            position: absolute
-        }
+        // &::after {
+        //     content: '';
+        //     right: 14px;
+        //     bottom: 0;
+        //     width: 112px;
+        //     height: 48px;
+        //     background: url(http://trace.cndwine.com/common/mobileImg/imgTest/rec_logo.png) center no-repeat;
+        //     opacity: 0.5;
+        //     background-size: contain;
+        //     position: absolute
+        // }
 
         .content {
             .content-line {

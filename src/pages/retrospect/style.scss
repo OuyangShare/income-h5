@@ -13,6 +13,13 @@
         .commodity-name {
             margin-bottom: 15px;
             line-height: 25px;
+
+            .content-line {
+                display: flex;
+                .tag {
+                    width: 100px;
+                }
+            }
         }
 
         .step-list {

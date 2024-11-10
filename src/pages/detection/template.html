@@ -1,5 +1,5 @@
 <div class="detection-page">
-    <van-nav-bar style="border-bottom: 1px solid rgb(200,200,200); margin-bottom: 5px;" title="国外检测">
+    <van-nav-bar style="border-bottom: 1px solid rgb(200,200,200); margin-bottom: 5px;" title="使用说明">
         <template #left>
             <span style="font-size: 16px;" @click="back()">
                 <van-icon color="black" name="arrow-left" size="16" />返回
@@ -13,16 +13,18 @@
                 <div class="name">{{infoObj.name}}</div>
             </div>
             <div class="content-line">
-                <div class="tag">国外检验<br>报告日期</div>
-                <div class="name">{{overseastests.inspectiondate}}</div>
+                <div class="tag">使用说明</div>
             </div>
-            <div class="content-line">
-                <div class="tag">国外检验<br>机&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;构</div>
-                <div class="name">{{ overseastests.inspectionorgname}}</div>
+            <div class="use-info" v-for="(item, index) in titleList" :key="index">
+                <div style="margin: 0 0 5px 12px;" class="title">{{ item }}</div>
+                <div style="margin: 0 0 5px 20px;" class="text">
+                    <div v-for="(e, idx) in (overseastests || []).filter(x=>x.inspectionorgname==item)" :key="idx">
+                       ({{ idx + 1 }}) {{ e.inspectiondate }}
+                    </div>
+                </div>
             </div>
-            <div class="content-line">
-                <div class="tag">国外检验<br>编&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号</div>
-                <div class="name">{{overseastests.inspectioncode}}</div>
+            <div class="content-logo-img">
+                <van-image width="60px" height="30px" fit="contain" src="/logo.jpg" />
             </div>
         </div>
     </div>
