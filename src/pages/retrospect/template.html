@@ -7,13 +7,14 @@
                 <div class="name">{{ infoObj.name }}</div>
             </div>
             <div class="content-line">
-                <div class="tag">建议零售价</div> 
+                <div class="tag">建议零售价</div>
                 <div class="name">{{ infoObj.price }}元 </div>
             </div>
         </div>
         <div>
             <div class="step-list">
-                <div class="step-item" v-for="item in list" @click="jumpPage(item)">
+                <div class="step-item" v-for="(item, index) in list.filter(x=>x.sort<7)" :key="index"
+                    @click="jumpPage(item)" :style="{ 'visibility': item.sort > 5 ? 'hidden': ''}">
                     <div class="triangle"></div>
                     <div class="sort">{{ item.sort }}</div>
                     <div class="icon" v-html="item.icon"></div>
@@ -31,16 +32,10 @@
             </div>
         </div>
         <div class="shop-info">
-            <div>建发酒业溯源管理系统获中国质量认证中心（CQC）可追溯体系认证：</div>
-            <div>
-                可追溯体系认证号（2024-2027）：
-                <a id="cqc-cert" style="color: #632aa2;text-decoration:underline;" href="javascript:void(0)"
-                    onclick="javascript:location.href='/trace/cqc_cert.html?address_cn=http%3A%2F%2Fbj.bcebos.com%2Fv1%2Fcndwineapp%2FCNDERPDB%2Fimage%2Fwi_cqcconfig%2FWI0000000000020987%2Fcqc_2024_cn.jpg%40!app_cgcode&amp;address_en=http%3A%2F%2Fbj.bcebos.com%2Fv1%2Fcndwineapp%2FCNDERPDB%2Fimage%2Fwi_cqcconfig%2FWI0000000000020987%2Fcqc_2024_en.jpg%40!app_cgcode&amp;id=114&amp;isshow=1&amp;label=%E5%8F%AF%E8%BF%BD%E6%BA%AF%E4%BD%93%E7%B3%BB%E8%AE%A4%E8%AF%81%E5%8F%B7%EF%BC%882024-2027%EF%BC%89&amp;name=CQC24TS0007R2M%2F3502&amp;updatetime=2024-11-04'">CQC24TS0007R2M/3502</a>
-            </div>
-            <div>
-                可追溯体系认证号（2024-2027）：
-                <a id="cqc-cert" style="color: #632aa2;text-decoration:underline;" href="javascript:void(0)"
-                    onclick="javascript:location.href='/trace/cqc_cert.html?address_cn=http%3A%2F%2Fbj.bcebos.com%2Fv1%2Fcndwineapp%2FCNDERPDB%2Fimage%2Fwi_cqcconfig%2FWI0000000000020986%2Fcqc_2021_cn.jpg%40!app_cgcode&amp;address_en=http%3A%2F%2Fbj.bcebos.com%2Fv1%2Fcndwineapp%2FCNDERPDB%2Fimage%2Fwi_cqcconfig%2FWI0000000000020986%2Fcqc_2021_en.jpg%40!app_cgcode&amp;id=113&amp;isshow=1&amp;label=%E5%8F%AF%E8%BF%BD%E6%BA%AF%E4%BD%93%E7%B3%BB%E8%AE%A4%E8%AF%81%E5%8F%B7%EF%BC%882021-2024%EF%BC%89&amp;name=CQC21TS0005R1M%2F3502&amp;updatetime=2024-11-04'">CQC21TS0005R1M/3502</a>
+            <div class="info-title">蚌埠市傲咪宠物有限公司(xmc)可追溯检测报告：</div>
+            <div v-for="(item, index) in isccproductList" :key="index" @clic="jumpCert">
+                {{item.caname}}
+                <a id="cqc-cert" href="javascript:void(0)">{{item.caimg}}/3502</a>
             </div>
         </div>
         <div class="contact-info">

@@ -20,13 +20,13 @@ export default {
             },
             {
                 name: '检测报告',
-                icon: '<i class="fas fa-home"></i>',
+                icon: '<i class="fa-solid fa-file"></i>',
                 sort: '2',
                 url: '/overseas'
             },
             {
                 name: '使用说明',
-                icon: '<i class="fas fa-flask"></i>',
+                icon: '<i class="fa-solid fa-list"></i>',
                 sort: '3',
                 url: '/detection',
             },
@@ -38,13 +38,13 @@ export default {
             },
             {
                 name: '公司简介',
-                icon: '<i class="fas fa-star"></i>',
+                icon: '<i class="fa-solid fa-house"></i>',
                 sort: '5',
                 url: '/aboutus'
             },
             {
                 name: '流通信息',
-                icon: '<i class="fas fa-truck"></i>',
+                icon: '<i class="fa-solid fa-truck-fast"></i>',
                 sort: '4',
                 url: '/circulation'
             },
@@ -77,21 +77,32 @@ export default {
                     }
                 )
             } else {
-                location.href = "https://www.cndwine.com"
+                // location.href = "https://www.cndwine.com"
             }
+        };
+        const jumpCert = () => {
+            router.push(
+                {
+                    path: '/overseas',
+                    query: route.query
+                }
+            )
         };
 
         const infoObj = ref({});
-
+        const isccproductList = ref([])
         onMounted(() => {
             API.getDetaInfo({code: route.query.code}).then(res => {
-                infoObj.value = res?.data?.data;                
+                infoObj.value = res?.data?.data;
+                isccproductList.value = infoObj.value.isccproductList || [];             
             })
         })
         return {
             list,
+            isccproductList,
             jumpPage,
             infoObj,
+            jumpCert,
         }
     }
 }

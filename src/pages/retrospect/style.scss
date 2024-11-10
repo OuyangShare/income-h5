@@ -99,6 +99,15 @@
             font-weight: 600;
             color: #000000;
             border-bottom: 1px solid rgb(200, 200, 200);
+            line-height: 20px;
+            .info-title {
+                font-size: 13px;
+                margin-bottom: 5px;
+            }
+            #cqc-cert {
+                color: #632aa2;
+                text-decoration:underline;
+            }
         }
 
         .contact-info {
