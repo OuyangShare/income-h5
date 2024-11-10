@@ -14,7 +14,7 @@ export default {
         const list = ref([
             {
                 name: '商品详情', 
-                icon: '<i class="fas fa-glass-martini" />',
+                icon: '<i class="fa-solid fa-lightbulb"></i>',
                 sort: '1',
                 url: '/commodity'
             },

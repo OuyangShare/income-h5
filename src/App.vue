@@ -18,4 +18,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
+.content-logo-img {
+    position: absolute;
+    bottom: 0;
+    right: 14px;
+}
 </style>

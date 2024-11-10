@@ -12,8 +12,6 @@ export default {
     setup() {
         const route = useRoute();
         const swipeList = ref([
-            'http://trace.cndwine.com/common/mobileImg/imgTest/swipper_1.png',
-            'http://trace.cndwine.com/common/mobileImg/imgTest/swipper_1.png',
         ])
         const back = () => {
             router.back();
@@ -25,7 +23,7 @@ export default {
             API.getDetaInfo({code: route.query.code}).then(res => {
                 const data = res?.data?.data;
                 obj.value = data;
-                swipeList.value = Array.from(obj.value?.bannerList || [], x=>x.bannerimage);
+                swipeList.value = Array.from(obj.value?.bannerList || [], x=>x.bannerimage);                
             })
         })
         return {

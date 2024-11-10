@@ -7,13 +7,13 @@
             </span>
         </template>
     </van-nav-bar>
-    <div class="swipe-info">
+    <!-- <div class="swipe-info">
         <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
             <van-swipe-item v-for="(item, index) in swipeList" :key="index">
                 <van-image width="100%" lazy-load :src="item" />
             </van-swipe-item>
         </van-swipe>
-    </div>
+    </div> -->
     <div class="content-wrapper">
         <div class="content">
             <div class="content-line">
@@ -21,36 +21,14 @@
                 <div class="name">{{obj.name}}</div>
             </div>
             <div class="content-line">
-                <div class="tag">储藏方法</div>
-                <div class="name">{{obj.storagemethod}}</div>
+                <div class="tag">商品简介</div>
+                <div class="name"></div>
             </div>
-            <div class="content-line">
-                <div class="tag">品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;牌</div>
-                <div class="name">{{ obj.brand }}</div>
+            <div class="imgs">
+                <img v-for="(item, index) in swipeList" :key="index" :src="item" />
             </div>
-            <div class="content-line">
-                <div class="tag">规&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格</div>
-                <div class="name">{{ obj.spec }}</div>
-            </div>
-            <div class="content-line">
-                <div class="tag">葡萄种类</div>
-                <div class="name">{{ obj.grapetype }}</div>
-            </div>
-            <div class="content-line">
-                <div class="tag">葡萄酒等级</div>
-                <div class="name">{{ obj.grapelevel }}</div>
-            </div>
-            <div class="content-line">
-                <div class="tag">搭配菜肴</div>
-                <div class="name">{{ obj.paireddishes }}</div>
-            </div>
-            <div class="content-line">
-                <div class="tag">醒酒时间</div>
-                <div class="name">{{ obj.aerationtime }}</div>
-            </div>
-            <div class="content-line">
-                <div class="tag">香&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;味</div>
-                <div class="name">{{obj.aroma}}</div>
+            <div class="content-logo-img">
+                <van-image width="60px" height="30px" fit="contain" src="/logo.jpg" />
             </div>
         </div>
     </div>
