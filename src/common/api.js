@@ -1,6 +1,6 @@
 import { request } from '@/request'
 
-const public_url = ''
+const public_url = '/api'
 
 export class API {
     static async getDetaInfo(params, data) {

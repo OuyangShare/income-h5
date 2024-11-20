@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // axios.defaults.baseURL = 'https://api.example.com';
-axios.defaults.baseURL = 'http://8.153.68.28:8090';
+axios.defaults.baseURL = '';
 
 // 请求拦截器
 axios.interceptors.request.use((config) => {
