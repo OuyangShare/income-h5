@@ -19,7 +19,7 @@
             <div class="content-line">
                 <div class="tag">检测证明</div>
             </div>
-            <div class="content-line t-center">
+            <div class="content-line t-center imgs">
                 <p v-if="imglist.length === 0" id="noImg" style="margin: 20px 0;color:#666">该产品无相关证书单据或相关单据出具中！</p>
                 <img v-for="(item, index) in imglist" :src="item" :key="index"></img>
             </div>
